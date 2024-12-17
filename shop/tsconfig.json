@@ -20,6 +20,6 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true
   },
-  "include": ["./src"],
+  "include": ["./src", "public/data"],
   "exclude": ["./node_modules"]
 }

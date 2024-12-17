@@ -1,7 +1,47 @@
-import { products } from "../../data/productData";
+import { useState, useEffect } from "react";
+// import { products } from "../../data/productData";
 import { Product } from "../../types";
 
 const Main = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true); 
+      try {
+        const response = await fetch("/data/productData.json");
+
+        if (!response.ok) {
+          throw new Error("Something goes wrong...");
+        }
+
+        const data: Product[] = await response.json();
+        setProducts(data);
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(`The products couldn't be loaded: ${error.message}`);
+        } else {
+          setError("Unknown error");
+        }
+        console.error(error);
+      } finally {
+        setLoading(false); 
+      }
+    };
+
+    fetchProducts();
+  }, []); 
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>; 
+  }
+
   return (
     <main className="p-4">
       <div className="flex justify-between flex-wrap gap-4">
