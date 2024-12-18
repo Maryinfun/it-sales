@@ -25,23 +25,23 @@
   },
   {
     "id": 4,
-    "category": "sweets",
-    "image": "/images/banana.png",
-    "name": "Banana",
+    "category": "choco",
+    "image": "/images/choco-straw.png",
+    "name": "Choco Strawberry",
     "description": "Yellow optimism in bend",
-    "price": "$3.00"
+    "price": "$6.00"
   },
   {
     "id": 5,
-    "category": "sweets",
-    "image": "/images/pineapple.png",
-    "name": "Pineapple",
+    "category": "choco",
+    "image": "/images/choco-candy.png",
+    "name": "Choco Candy",
     "description": "Description for product 2.",
-    "price": "$5.00"
+    "price": "$4.00"
   },
   {
     "id": 6,
-    "category": "sweets",
+    "category": "choco",
     "image": "/images/apple.png",
     "name": "Apple",
     "description": "Description for product 3.",
@@ -50,18 +50,18 @@
   {
     "id": 7,
     "category": "cakes",
-    "image": "/images/banana.png",
-    "name": "cakescakes",
+    "image": "/images/choco-cake.png",
+    "name": "Cakes with choco",
     "description": "Yellow optimism in bend",
-    "price": "$4.00"
+    "price": "$3.00"
   },
   {
     "id": 8,
     "category": "cakes",
-    "image": "/images/pineapple.png",
-    "name": "cakescakescakes",
+    "image": "/images/crispy-cake.png",
+    "name": "Cake with crispy",
     "description": "Description for product 2.",
-    "price": "$6.00"
+    "price": "$2.00"
   },
   {
     "id": 9,

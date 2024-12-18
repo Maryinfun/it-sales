@@ -47,7 +47,7 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu, setSelectedCategory }) =>
             </li>
             <li
               className="text-lg text-custom-black cursor-pointer"
-              onClick={() => handleCategoryClick("sweets")}
+              onClick={() => handleCategoryClick("choco")}
             >
               SWEETS
             </li>
