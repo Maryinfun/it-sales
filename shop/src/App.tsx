@@ -7,6 +7,7 @@ import ProductPage from "./components/productPage/productPage";
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -16,11 +17,18 @@ const App = () => {
     <Router>
       <div className="App">
         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Menu
+          isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
+          setSelectedCategory={setSelectedCategory}
+        />
 
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/product/:productName" element={<ProductPage />} />{" "}
+          <Route
+            path="/"
+            element={<Main selectedCategory={selectedCategory} />}
+          />
+          <Route path="/product/:productName" element={<ProductPage />} />
         </Routes>
       </div>
     </Router>

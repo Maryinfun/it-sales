@@ -16,4 +16,5 @@ export interface Category {
 export interface MenuProps {
   isMenuOpen: boolean;
   toggleMenu: () => void;
+  setSelectedCategory?: (category: string) => void;
 }

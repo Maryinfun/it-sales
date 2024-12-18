@@ -1,7 +1,18 @@
 import { FC } from "react";
 import { MenuProps } from "../../types";
+import { useNavigate } from "react-router-dom";
 
-const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu }) => {
+const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu, setSelectedCategory }) => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category: string) => {
+    if (setSelectedCategory) {
+      setSelectedCategory(category);
+    }
+    navigate(`/?category=${category}`);
+    toggleMenu();
+  };
+
   return (
     <div>
       <div
@@ -11,8 +22,10 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu }) => {
         style={{ width: "75%" }}
       >
         <div className="flex flex-col items-center p-4">
-          <div className="flex gap-4 w-full justify-between">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl text-custom-black font-bold p-4 w-fit">CATEGORIES</h2>
+          <div className="flex gap-4 w-full justify-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-custom-black font-bold p-4 w-fit">
+              CATEGORIES
+            </h2>
             <button
               className="bg-transparent border-none focus:outline-none"
               onClick={toggleMenu}
@@ -26,9 +39,24 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu }) => {
           </div>
 
           <ul className="space-y-4">
-            <li className="text-lg text-custom-black">FRUIT</li>
-            <li className="text-lg text-custom-black">SWEETS</li>
-            <li className="text-lg text-custom-black">CAKES</li>
+            <li
+              className="text-lg text-custom-black cursor-pointer"
+              onClick={() => handleCategoryClick("fruit")}
+            >
+              FRUIT
+            </li>
+            <li
+              className="text-lg text-custom-black cursor-pointer"
+              onClick={() => handleCategoryClick("sweets")}
+            >
+              SWEETS
+            </li>
+            <li
+              className="text-lg text-custom-black cursor-pointer"
+              onClick={() => handleCategoryClick("cakes")}
+            >
+              CAKES
+            </li>
           </ul>
         </div>
       </div>

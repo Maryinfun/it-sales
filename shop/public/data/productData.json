@@ -22,5 +22,53 @@
     "name": "Apple",
     "description": "Description for product 3.",
     "price": "$5.00"
+  },
+  {
+    "id": 4,
+    "category": "sweets",
+    "image": "/images/banana.png",
+    "name": "Banana",
+    "description": "Yellow optimism in bend",
+    "price": "$3.00"
+  },
+  {
+    "id": 5,
+    "category": "sweets",
+    "image": "/images/pineapple.png",
+    "name": "Pineapple",
+    "description": "Description for product 2.",
+    "price": "$5.00"
+  },
+  {
+    "id": 6,
+    "category": "sweets",
+    "image": "/images/apple.png",
+    "name": "Apple",
+    "description": "Description for product 3.",
+    "price": "$4.00"
+  },
+  {
+    "id": 7,
+    "category": "cakes",
+    "image": "/images/banana.png",
+    "name": "cakescakes",
+    "description": "Yellow optimism in bend",
+    "price": "$4.00"
+  },
+  {
+    "id": 8,
+    "category": "cakes",
+    "image": "/images/pineapple.png",
+    "name": "cakescakescakes",
+    "description": "Description for product 2.",
+    "price": "$6.00"
+  },
+  {
+    "id": 9,
+    "category": "cakes",
+    "image": "/images/apple.png",
+    "name": "cakescakes",
+    "description": "Description for product 3.",
+    "price": "$5.00"
   }
 ]

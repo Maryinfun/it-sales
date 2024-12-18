@@ -14,7 +14,7 @@ const Header: FC<MenuProps> = ({ toggleMenu, isMenuOpen }) => {
         </h2>
       </div>
       <button
-        className={`fixed bottom-8 right-8 bg-transparent border-none focus:outline-none ${isMenuOpen ? "hidden" : ""} sm:hidden`}
+        className={`fixed bottom-8 right-8 bg-transparent border-none focus:outline-none ${isMenuOpen ? "hidden" : ""}`}
         onClick={toggleMenu}
       >
         <img
