@@ -1,12 +1,7 @@
-import { useState } from "react";
+import { FC } from "react";
+import { MenuProps } from "../../types";
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-  
+const Header: FC<MenuProps> = ({ toggleMenu, isMenuOpen }) => {
   return (
     <header className="bg-white p-4 shadow-md flex justify-center items-center">
       <div className="flex flex-col gap-2">
@@ -16,19 +11,16 @@ const Header = () => {
         </h2>
       </div>
       <button
-        className="fixed bottom-8 right-8 bg-transparent border-none focus:outline-none"
+        className={`fixed bottom-8 right-8 bg-transparent border-none focus:outline-none ${isMenuOpen ? "hidden" : ""}`}
         onClick={toggleMenu}
       >
         <img
           src="/plus.png"
           alt="Menu"
-          className={`w-12 h-12 transition-transform duration-300 ${
-            isMenuOpen ? "hidden" : ""
-          }`}
+          className="w-12 h-12 transition-transform duration-300"
         />
-      </button>{" "}
+      </button>
     </header>
-    
   );
 };
 export default Header;

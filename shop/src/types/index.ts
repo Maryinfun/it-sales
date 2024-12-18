@@ -12,3 +12,7 @@ export interface Product {
     products: Product[];
   }
   
+  export interface MenuProps {
+    isMenuOpen: boolean;
+    toggleMenu: () => void;
+  }
