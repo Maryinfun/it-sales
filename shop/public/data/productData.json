@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "category": "fruit",
     "image": "/images/banana.png",
     "name": "Banana",
     "description": "Yellow optimism in bend",
@@ -8,6 +9,7 @@
   },
   {
     "id": 2,
+    "category": "fruit",
     "image": "/images/pineapple.png",
     "name": "Pineapple",
     "description": "Description for product 2.",
@@ -15,6 +17,7 @@
   },
   {
     "id": 3,
+    "category": "fruit",
     "image": "/images/apple.png",
     "name": "Apple",
     "description": "Description for product 3.",

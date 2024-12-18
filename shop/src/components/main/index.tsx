@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // import { products } from "../../data/productData";
 import { Product } from "../../types";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -9,7 +10,7 @@ const Main = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      setLoading(true); 
+      setLoading(true);
       try {
         const response = await fetch("/data/productData.json");
 
@@ -27,19 +28,19 @@ const Main = () => {
         }
         console.error(error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
     fetchProducts();
-  }, []); 
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>; 
+    return <div>{error}</div>;
   }
 
   return (
@@ -48,7 +49,7 @@ const Main = () => {
         {products.map((product: Product) => (
           <div
             key={product.id}
-            className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-64 h-80 overflow-hidden"
+            className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-full sm:w-64 md:w-72 lg:w-80 h-80 overflow-hidden"
           >
             <img
               src={product.image}
@@ -61,6 +62,10 @@ const Main = () => {
             <h3 className="text-lg w-fit font-medium truncate">
               {product.price}
             </h3>
+
+            <Link to={`/product/${product.name.toLowerCase()}`}>
+              <button className="bg-[rgba(0,0,0,0.77)] text-white p-2 rounded">View Details</button>
+            </Link>
           </div>
         ))}
       </div>

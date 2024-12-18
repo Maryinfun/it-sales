@@ -11,8 +11,8 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu }) => {
         style={{ width: "75%" }}
       >
         <div className="flex flex-col items-center p-4">
-          <div className="flex gap-4">
-            <h2 className="text-2xl font-bold w-fit p-4">CATEGORIES</h2>
+          <div className="flex gap-4 w-full justify-between">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-custom-black font-bold p-4 w-fit">CATEGORIES</h2>
             <button
               className="bg-transparent border-none focus:outline-none"
               onClick={toggleMenu}
@@ -26,9 +26,9 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu }) => {
           </div>
 
           <ul className="space-y-4">
-            <li className="text-lg">FRUIT</li>
-            <li className="text-lg">SWEETS</li>
-            <li className="text-lg">CAKES</li>
+            <li className="text-lg text-custom-black">FRUIT</li>
+            <li className="text-lg text-custom-black">SWEETS</li>
+            <li className="text-lg text-custom-black">CAKES</li>
           </ul>
         </div>
       </div>
