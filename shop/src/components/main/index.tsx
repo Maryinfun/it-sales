@@ -1,18 +1,11 @@
 import { useState, useEffect } from "react";
-import { Product } from "../../types";
-import { useLocation } from "react-router-dom";
+import { MainProps, Product } from "../../types";
+import { Link } from "react-router-dom";
 
-const Main = () => {
+const Main: React.FC<MainProps> = ({ selectedCategory }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  const location = useLocation();
-  useEffect(() => {
-    const category = new URLSearchParams(location.search).get("category");
-    setSelectedCategory(category);
-  }, [location]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -57,18 +50,21 @@ const Main = () => {
     <main className="p-4">
       <div className="flex justify-between flex-wrap gap-4">
         {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-full sm:w-64 md:w-72 lg:w-80 h-80 overflow-hidden"
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-32 h-32 object-contain"
-            />
-            <h2 className="text-xl w-fit font-medium truncate">{product.name}</h2>
-            <h3 className="text-lg w-fit font-medium truncate">{product.price}</h3>
-          </div>
+          <Link to={`/product/${product.name.toLowerCase()}`} key={product.id}>
+            <div className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-full sm:w-64 md:w-72 lg:w-80 h-80 overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-32 h-32 object-contain"
+              />
+              <h2 className="text-xl w-fit font-medium truncate">
+                {product.name}
+              </h2>
+              <h3 className="text-lg w-fit font-medium truncate">
+                {product.price}
+              </h3>
+            </div>
+          </Link>
         ))}
       </div>
     </main>

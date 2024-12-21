@@ -2,7 +2,11 @@ import { FC } from "react";
 import { MenuProps } from "../../types";
 import { useNavigate } from "react-router-dom";
 
-const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu, setSelectedCategory }) => {
+const Menu: FC<MenuProps> = ({
+  isMenuOpen,
+  toggleMenu,
+  setSelectedCategory,
+}) => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category: string) => {
@@ -10,6 +14,10 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu, setSelectedCategory }) =>
       setSelectedCategory(category);
     }
     navigate(`/?category=${category}`);
+    toggleMenu();
+  };
+  const handleShowAllClick = () => {
+    navigate("/main");
     toggleMenu();
   };
 
@@ -53,9 +61,15 @@ const Menu: FC<MenuProps> = ({ isMenuOpen, toggleMenu, setSelectedCategory }) =>
             </li>
             <li
               className="text-lg text-custom-black cursor-pointer"
-              onClick={() => handleCategoryClick("cakes")}
+              onClick={() => handleCategoryClick("biscuit")}
             >
-              CAKES
+              BISCUIT
+            </li>
+            <li
+              className="text-lg text-custom-black cursor-pointer"
+              onClick={handleShowAllClick}
+            >
+              SHOW ALL
             </li>
           </ul>
         </div>

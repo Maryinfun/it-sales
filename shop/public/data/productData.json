@@ -49,23 +49,23 @@
   },
   {
     "id": 7,
-    "category": "cakes",
+    "category": "biscuit",
     "image": "/images/choco-cake.png",
-    "name": "Cakes with choco",
+    "name": "biscuit with choco",
     "description": "Yellow optimism in bend",
     "price": "$3.00"
   },
   {
     "id": 8,
-    "category": "cakes",
+    "category": "biscuit",
     "image": "/images/crispy-cake.png",
-    "name": "Cake with crispy",
+    "name": "biscuit with crispy",
     "description": "Description for product 2.",
     "price": "$2.00"
   },
   {
     "id": 9,
-    "category": "cakes",
+    "category": "biscuit",
     "image": "/images/apple.png",
     "name": "cakescakes",
     "description": "Description for product 3.",

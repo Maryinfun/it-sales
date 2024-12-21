@@ -18,3 +18,7 @@ export interface MenuProps {
   toggleMenu: () => void;
   setSelectedCategory?: (category: string) => void;
 }
+
+export interface MainProps {
+  selectedCategory: string | null;
+}
