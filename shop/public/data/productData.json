@@ -42,16 +42,16 @@
   {
     "id": 6,
     "category": "choco",
-    "image": "/images/apple.png",
-    "name": "Apple",
+    "image": "/images/choco-bar.png",
+    "name": "Chocolate bar",
     "description": "Description for product 3.",
-    "price": "$4.00"
+    "price": "$9.00"
   },
   {
     "id": 7,
     "category": "biscuit",
     "image": "/images/choco-cake.png",
-    "name": "biscuit with choco",
+    "name": "Biscuit with choco",
     "description": "Yellow optimism in bend",
     "price": "$3.00"
   },
@@ -59,15 +59,15 @@
     "id": 8,
     "category": "biscuit",
     "image": "/images/crispy-cake.png",
-    "name": "biscuit with crispy",
+    "name": "Biscuit with crispy",
     "description": "Description for product 2.",
     "price": "$2.00"
   },
   {
     "id": 9,
     "category": "biscuit",
-    "image": "/images/apple.png",
-    "name": "cakescakes",
+    "image": "/images/gingerbread-man.png",
+    "name": "Gingerbread man",
     "description": "Description for product 3.",
     "price": "$5.00"
   }
