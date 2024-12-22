@@ -69,7 +69,7 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="p-4 flex flex-col items-center">
+    <div className="p-4 flex flex-col items-center w-full">
       <div className="mt-4">
         <img
           src={product.image}
@@ -97,20 +97,34 @@ const ProductPage = () => {
         >
           Quantity
         </label>
-        <input
-          id="quantity"
-          type="number"
-          min="0"
-          max="999"
-          value={quantity}
-          onChange={handleQuantityChange}
-          className="mt-2 p-2 border border-gray-300 text-custom-black rounded-md text-center w-20 text-lg"
-        />
+        <div className="flex items-center">
+          <button
+            onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
+            className="p-2 border border-gray-300 text-custom-black rounded-l-md text-lg"
+          >
+            -
+          </button>
+          <input
+            id="quantity"
+            type="number"
+            min="1"
+            max="999"
+            value={quantity}
+            onChange={handleQuantityChange}
+            className="p-2 border-t border-b border-gray-300 text-custom-black text-center w-20 text-lg"
+          />
+          <button
+            onClick={() => setQuantity(quantity < 999 ? quantity + 1 : 999)}
+            className="p-2 border border-gray-300 text-custom-black rounded-r-md text-lg"
+          >
+            +
+          </button>
+        </div>
       </div>
 
       <button
         onClick={handleAddToCart}
-        className="bg-custom-black py-1.5 px-5 text-white sm:bg-custom-black sm:opacity-100 m-4 rounded-lg"
+        className="bg-custom-black py-2 px-5 text-white rounded-lg w-full sm:w-auto opacity-100"
       >
         Add to Cart
       </button>

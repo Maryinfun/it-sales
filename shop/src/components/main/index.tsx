@@ -51,16 +51,16 @@ const Main: React.FC<MainProps> = ({ selectedCategory }) => {
       <div className="flex justify-between flex-wrap gap-4">
         {filteredProducts.map((product) => (
           <Link to={`/product/${product.name.toLowerCase()}`} key={product.id}>
-            <div className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-full sm:w-64 md:w-72 lg:w-80 h-80 overflow-hidden">
+            <div className="flex flex-col items-center justify-between gap-2 border p-4 rounded-lg shadow-sm w-64 h-80 overflow-hidden">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-32 h-32 object-contain"
               />
-              <h2 className="text-xl w-fit font-medium truncate">
+              <h2 className="text-xl w-full font-medium truncate">
                 {product.name}
               </h2>
-              <h3 className="text-lg w-fit font-medium truncate">
+              <h3 className="text-lg w-full font-medium truncate">
                 {product.price}
               </h3>
             </div>
